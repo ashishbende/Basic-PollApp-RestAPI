@@ -1,2 +1,1 @@
-# assignment1
-CmpeE 273 Assignment1
+# Cmpe273 Assignment 1
