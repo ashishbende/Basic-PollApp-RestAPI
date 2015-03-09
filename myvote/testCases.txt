@@ -1,0 +1,22 @@
+1. create Mod  	--->    * empty name,email,password -->! null values
+	  	--->	* no input 		--> !status 400
+		--->	* invalid inputs, number instead of String -->! # as String
+
+2. view Mod
+
+3. Update Mod 	---->	* invalid inputs: number instead of String -->! Status 400
+			* more entries in update put request	-->! Status:400
+			* less entries/no entries in update put request -->! null field
+
+4. Create a poll --->	* Missing field -->! null value taken, ! 404 status for missing Choice
+			* Invalid input -->! # accepted as String
+
+5. View Poll w/o Results ---> * Show output w/o Result field (DONE).
+
+6. View Poll w/ Result --->	* Show Result field (DONE).
+
+7. List all polls --->		
+
+8. Delete a poll --->	(DONE)
+
+9. Vote a poll --->	* cannot vote if poll is deleted/not available.
