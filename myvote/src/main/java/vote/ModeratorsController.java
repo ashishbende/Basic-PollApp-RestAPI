@@ -1,11 +1,11 @@
 package vote;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+/*import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;*/
 
 /*
  *  @author Ashish Bende
@@ -26,9 +30,13 @@ public class ModeratorsController{
 	
 	private final AtomicLong counter = new AtomicLong(123455);
 	
-	DateTime dt = new DateTime();
+	/*DateTime dt = new DateTime();
 	DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
-	String currentTime = fmt.print(dt);
+	String currentTime = fmt.print(dt);*/
+	
+	DateFormat dt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.ms'Z'");
+	String currentTime = dt.format(new Date());
+	
 	ArrayList<Moderators> modlist = new ArrayList<Moderators>();
 	
 	@RequestMapping(value="/moderators", method=RequestMethod.POST)
